@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="eventDetails"
+            type="com.dro.enterperform.eventsScreen.model.EventDetailsModelItem" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_patient_lobby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minHeight="70dp"
+        android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/event_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                cover="@{eventDetails.cover}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/ic_launcher_background" />
+
+
+
+        <TextView
+            android:id="@+id/event_name_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:text="@{eventDetails.name}"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/event_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Event Name" />
+
+        <TextView
+            android:id="@+id/event_desc_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="4dp"
+            android:lines="2"
+            android:text="@{eventDetails.description}"
+            app:layout_constraintStart_toEndOf="@id/event_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_name_textview"
+            tools:text="Description of Event to known it to user " />
+
+        <TextView
+            android:id="@+id/date_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="12dp"
+            android:textSize="12sp"
+            android:text="@{eventDetails.start_date}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/event_image"
+            app:layout_constraintTop_toBottomOf="@id/event_desc_textview"
+            tools:text="12 April 2021" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

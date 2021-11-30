@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EnterPerform</string>
+    <string name="splash_screen">Splash Screen</string>
+    <string name="todo">TODO</string>
+    <string name="events">Events</string>
+    <string name="description">Description</string>
+    <string name="location">Location</string>
+</resources>
